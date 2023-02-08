@@ -144,3 +144,64 @@ console.log(Object.keys(student))
     let current_time = new Date()
     let time = new Clock(current_time.getHours(),current_time.getMinutes(),current_time.getSeconds(),current_time)
     // console.log(time.run(),time.updateTime())
+
+// find Unique values from an array
+// class Bills{
+//     constructor()
+// }
+const bills = [{
+    date: '2020-01-20',
+    amount: '70',
+    category: 'phone'
+  },
+  {
+    date: '2020-01-20',
+    amount: '20',
+    category: 'gas'
+  },
+  {
+    date: '2020-02-20',
+    amount: '75',
+    category: 'phone'
+  }
+]
+const findUniqueValues =(bills)=>{
+    debugger
+    
+return [...new Set(bills.map(bill => bill.category))]
+}
+console.log(findUniqueValues(bills),"unique values")
+
+// clone an array
+const b=[1, 2, 4, 0]
+const c=[1, 2, [4, 0]]
+c[2][1]=0
+function array_Clone(arr){
+let ClonedArray = [...arr]
+return ClonedArray
+}
+console.log(array_Clone(b));
+console.log(array_Clone(c));
+// [1, 2, 4, 0]
+// [1, 2, [4, 0]]
+var array_Clone = arra1 => arra1.slice(0);
+console.log(array_Clone([1, 2, 4, 0]));
+console.log(array_Clone([1, 2, [4, 0]])); 
+
+let ax = [1, 2, 4, 0];
+console.log("Original array:")
+console.log(ax)
+let by = Array.from(ax);
+console.log("Cloned array:")
+console.log(by)
+
+// Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array.
+
+function first(array,n){
+    if(n == null)
+    return array[0]
+    else if(n < 0)
+    return []
+    return array.slice(n)
+}
+// console.log(first([1,2,3,4]))

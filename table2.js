@@ -31,3 +31,21 @@ number++
 } 
 
 }
+// fibonacci series with recursion
+function fibonacci(n) {
+	if (n < 2)
+		return 1;
+	return fibonacci(n - 1) + fibonacci(n - 2);
+}
+console.log(fibonacci(6))
+
+// fibonacci series with memoization
+function memoisedFibonacci(n, cache) {
+	cache = cache || [1, 1]
+    console.log(cache)
+	if (cache[n])
+		return cache[n]
+	return cache[n] = memoisedFibonacci(n - 1, cache) +
+	memoisedFibonacci(n - 2, cache);
+}
+console.log(memoisedFibonacci(5))
